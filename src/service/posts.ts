@@ -30,7 +30,7 @@ export async function getNonFeaturedPosts(): Promise<Post[]> {
 }
 
 export async function getPostData(fileName: string): Promise<PostData> {
-  const filePath = path.join(process.cwd(), "data", `${fileName}.md`);
+  const filePath = path.join(process.cwd(), "data", "posts", `${fileName}.md`);
   const metadata = await getAllPosts() //
     .then((posts) => posts.find((post) => post.path === fileName));
   if (!metadata)
