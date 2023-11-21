@@ -27,16 +27,21 @@ export default function ContactForm() {
     e.preventDefault();
     console.log(form);
     setBanner({ message: "성공했어!", state: "success" });
-    setTimeout(() => {
-      setBanner(null);
-    }, 3000);
+    // setTimeout(() => {
+    //   setBanner(null);
+    // }, 3000);
   };
 
   return (
-    <>
+    <section className="w-full max-w-md">
       {banner && <Banner banner={banner} />}
-      <form onSubmit={onSubmit}>
-        <label htmlFor="from">Your Email</label>
+      <form
+        onSubmit={onSubmit}
+        className="w-full my-4 flex flex-col gap-2 p-4 bg-slate-400 rounded-xl text-white"
+      >
+        <label htmlFor="from" className="font-semibold">
+          Your Email
+        </label>
         <input
           type="email"
           id="from"
@@ -46,7 +51,9 @@ export default function ContactForm() {
           value={form.from}
           onChange={onChange}
         />
-        <label htmlFor="subject">Subject</label>
+        <label htmlFor="subject" className="font-semibold">
+          Subject
+        </label>
         <input
           type="text"
           id="subject"
@@ -55,7 +62,9 @@ export default function ContactForm() {
           value={form.subject}
           onChange={onChange}
         />
-        <label htmlFor="message">message</label>
+        <label htmlFor="message" className="font-semibold">
+          message
+        </label>
         <textarea
           rows={10}
           id="message"
@@ -63,9 +72,12 @@ export default function ContactForm() {
           required
           value={form.message}
           onChange={onChange}
+          className="text-black"
         />
-        <button>Submit</button>
+        <button className="bg-blue-300 text-black font-bold hover:bg-blue-400">
+          Submit
+        </button>
       </form>
-    </>
+    </section>
   );
 }
