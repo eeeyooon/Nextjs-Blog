@@ -67,6 +67,7 @@ export default function ContactForm() {
           autoFocus
           value={form.from}
           onChange={onChange}
+          className="text-black"
         />
         <label htmlFor="subject" className="font-semibold">
           Subject
@@ -78,6 +79,7 @@ export default function ContactForm() {
           required
           value={form.subject}
           onChange={onChange}
+          className="text-black"
         />
         <label htmlFor="message" className="font-semibold">
           message
