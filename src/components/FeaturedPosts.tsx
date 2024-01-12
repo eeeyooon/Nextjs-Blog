@@ -7,7 +7,7 @@ export default async function FeaturedPosts() {
 
   // 2. 모든 포스트 데이터를 보여줌.
   return (
-    <section className="my-4">
+    <section className="my-4 mx-8">
       <h2 className="text-2xl font-bold my-2">FeaturedPosts</h2>
       <PostsGrid posts={posts} />
     </section>
